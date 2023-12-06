@@ -88,4 +88,44 @@ router.get("/find",async(req,res)=>{
     }
 });
 
+// search by name
+router.get('/name',async(req,res)=>{
+    try{
+        let query={};
+        if(req.query?.name){
+            // checking if the request contains the name parameter
+            query={bookTitle:new RegExp(req.query.name, 'i')};
+              
+        }
+        else{
+            return res.status(400).send({ message: 'Missing name parameter' });
+        }
+        const result=await Books.find(query);
+        if(result){
+            return res.status(200).send(result);
+        }
+        res.status(404).send({message:"Not found"});
+    }catch(error){
+        res.status(500).send({message:error.message});
+    }
+})
+
+// search by id
+router.get('/:id',async(req,res)=>{
+    try{
+        const {id}=req.params;
+       
+        // object for filtering the database table
+        const filter={_id: new ObjectId(id)};
+        
+        const result=await Books.findOne(filter);
+        if(!result){
+            return res.status(404).json({message:"Not found"});
+        }
+        res.status(200).send(result);
+    }catch(error){
+        res.status(500).json({message:error.message});
+    }
+});
+
 export default router;   

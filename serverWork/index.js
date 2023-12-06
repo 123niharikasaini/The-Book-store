@@ -1,11 +1,15 @@
 import express from 'express';
 import cors from 'cors';
 import mongoose from 'mongoose';
-import { Books } from './models/book.js';
-import { ObjectId } from 'mongodb';
+// import { Books } from './models/book.js';
+// import { ObjectId } from 'mongodb';
 import router from './route/routes.js';
+import dotenv from "dotenv"
 
-const PORT=process.env.PORT||5000;
+dotenv.config({path:'./config.env'})
+
+
+const PORT=process.env.PORT;
 const app=express();
 
 // middleware 
@@ -110,7 +114,7 @@ app.use('/books',router);
 
 // =======================================================================//
 // mongoDB configurations
-const mongoDBURL='mongodb+srv://demoUser:PSyvhcZQiyF1q9Ox@cluster0.bdepbl6.mongodb.net/?retryWrites=true&w=majority';
+const mongoDBURL=process.env.DATABASE;
 // connecting mongoose to mongoDB
 mongoose
 .connect(mongoDBURL)
