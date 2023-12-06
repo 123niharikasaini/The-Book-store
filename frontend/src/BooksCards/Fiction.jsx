@@ -8,7 +8,7 @@ const FictionCard = (props) => {
     useEffect(()=>{
     
       const fetching=async()=>{
-        const response=await axios.get(`http://localhost:5000/books/find?category=Fiction`)
+        const response=await axios.get(`${import.meta.env.VITE_BASE_URL}/books/find?category=Fiction`)
         const firstFour=response.data.slice(0,10)
         setBooks(firstFour);
         // setBooks(response.data);

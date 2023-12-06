@@ -14,7 +14,7 @@ const Calling = () => {
   useEffect(()=>{
     
     const fetching=async()=>{
-      const response=await axios.get(`http://localhost:5000/books/find?category=${category}`)
+      const response=await axios.get(`${import.meta.env.VITE_BASE_URL}/books/find?category=${category}`)
       setBooks(response.data);
       // console.log(books);
       console.log(response.data);

@@ -6,13 +6,13 @@ import listGenres from "../APIs/Genre"
 
 
 const Dashboard = () => {
-  const [category,setCategory]=useState()
+  // const [category,setCategory]=useState()
   const [size,setSize]=useState();
   
 
   useEffect(()=>{
     const fetching=async()=>{
-      const response=await axios.get("http://localhost:5000/books/all-books");
+      const response=await axios.get(`${import.meta.env.VITE_BASE_URL}/books/all-books`);
       
       setSize(response.data.length)
 

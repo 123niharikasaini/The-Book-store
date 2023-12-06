@@ -5,7 +5,7 @@ const SelfHelpCard = (props) => {
     const [books,setBooks]=useState([]);
 
   useEffect(()=>{
-    fetch("http://localhost:5000/books/find?category=Self Help").then(res=>res.json()).then(data=>setBooks(data));
+    fetch(`${import.meta.env.VITE_BASE_URL}/books/find?category=Self Help`).then(res=>res.json()).then(data=>setBooks(data));
     setBooks(books.slice(0,4))
   },[]);
 

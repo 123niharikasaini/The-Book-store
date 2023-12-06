@@ -9,7 +9,7 @@ const Delete = () => {
 
     const deleting=()=>{
         const process=async()=>{
-            const res= await axios.delete(`http://localhost:5000/books/delete/${id}`)
+            const res= await axios.delete(`${import.meta.env.VITE_BASE_URL}/books/delete/${id}`)
             .then(()=>{
                 nav(-1);
                 return alert("Deleted")})
