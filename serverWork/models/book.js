@@ -11,19 +11,19 @@ const bookSchema=mongoose.Schema({
     },
     bookDesc:{
         type:String,
-        required:false
+        required:true
     },
     category:{
         type:Array,
-        required:false
+        required:true
     },
     imgURL:{
         type:String,
-        required:false
+        required:true
     },
     pdfURL:{
         type:String,
-        required:false
+        required:true
     }
 });
 
