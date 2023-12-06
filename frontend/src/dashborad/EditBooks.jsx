@@ -18,7 +18,7 @@ const EditBooks = () => {
 
   useEffect(()=>{
     const fetching=async()=>{
-      const res=await axios.get(`http://localhost:5000/books/${id}`);
+      const res=await axios.get(`${import.meta.env.VITE_BASE_URL}/books/${id}`);
       // console.log(res.data);
       // setBook(res.data);
       setTitle(res.data.bookTitle)
@@ -50,19 +50,14 @@ const EditBooks = () => {
 
     // updating data to the database
     const sending=async()=>{
-      const response=await axios.patch(`http://localhost:5000/books/update/${id}`,updateObj,
+      const response=await axios.patch(`${import.meta.env.VITE_BASE_URL}/books/update/${id}`,updateObj,
       {headers:{"Content-Type":"application/json"},}
       )
       .then(response=>{alert('Data updated');
                         form.reset();})
       .catch((error)=>{alert(error)})
 
-  //     fetch(`http://localhost:5000/books/update/${id}`,
-  //     {method:"PATCH",
-  //   headers:{"Content-Type":"application/json"},
-  //   body:JSON.stringify(updateObj)
-  // }).then(res=>res.json()).then(data=>{
-  //   alert("Updated");})
+    
                         
     }
 

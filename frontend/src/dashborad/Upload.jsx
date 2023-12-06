@@ -37,7 +37,7 @@ const Upload = () => {
 
     // uploading data to the database
     const sending=async()=>{
-      const response=await axios.post("http://localhost:5000/books/add",bookObj,
+      const response=await axios.post(`${import.meta.env.VITE_BASE_URL}/books/add`,bookObj,
       {headers:{"Content-Type":"application/json"},
       })
       .then((response=>{alert('Data uploaded');
