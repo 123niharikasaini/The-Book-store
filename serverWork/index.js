@@ -128,7 +128,5 @@ app.listen(PORT,()=>{
 });
 
 
-// ================================
-// Password of mongoDB database
-// username:=> demoUser  ==============>> password:=> PSyvhcZQiyF1q9Ox
+
 
