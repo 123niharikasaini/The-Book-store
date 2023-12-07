@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react'
-import { AuthContext } from '../contacts/authProvider';
+import { AuthContext } from '../contacts/AuthProvider';
 import { BsGoogle } from 'react-icons/bs';
 import { useLocation, useNavigate } from 'react-router-dom';
 

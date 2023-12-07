@@ -1,5 +1,5 @@
 import React, { useContext, useState, } from 'react'
-import { AuthContext } from '../contacts/authProvider'
+import { AuthContext } from '../contacts/AuthProvider'
 import { useLocation, useNavigate } from 'react-router-dom';
 import { IoMdArrowRoundBack } from "react-icons/io";
 
