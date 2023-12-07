@@ -24,7 +24,7 @@ app.use(express.json());
 
 // =============================================================== //
 // ---------------http route-----------------------------//
-app.use('/books',router);
+app.use('/',router);
                     // // for home page route
                     // app.get('/',(req,res)=>{
                     //     return res.send("Working fine");

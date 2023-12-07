@@ -10,7 +10,7 @@ const Shop = () => {
 
   useEffect(()=>{
     const fetching=async()=>{
-      const response=await axios.get(`${import.meta.env.VITE_BASE_URL}/books/all-books`);
+      const response=await axios.get(`${import.meta.env.VITE_BASE_URL}/all-books`);
       setData(response.data);
       // console.log(data);
     }

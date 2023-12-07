@@ -5,7 +5,7 @@ const HorrorCard = (props) => {
     const [books,setBooks]=useState([]);
 
   useEffect(()=>{
-    fetch(`${import.meta.env.VITE_BASE_URL}/books/find?category=Horror`).then(res=>res.json()).then(data=>setBooks(data));
+    fetch(`${import.meta.env.VITE_BASE_URL}/find?category=Horror`).then(res=>res.json()).then(data=>setBooks(data));
   },[]);
 
   return (

@@ -9,7 +9,7 @@ const MoreInfo = () => {
 
     useEffect(()=>{
         const fetching=async()=>{
-            const response=await axios.get(`${import.meta.env.VITE_BASE_URL}/books/${id}`)
+            const response=await axios.get(`${import.meta.env.VITE_BASE_URL}/${id}`)
             setData(response.data);
             console.log(data)
             console.log(response.data)

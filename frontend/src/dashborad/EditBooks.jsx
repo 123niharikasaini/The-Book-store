@@ -18,7 +18,7 @@ const EditBooks = () => {
 
   useEffect(()=>{
     const fetching=async()=>{
-      const res=await axios.get(`${import.meta.env.VITE_BASE_URL}/books/${id}`);
+      const res=await axios.get(`${import.meta.env.VITE_BASE_URL}/${id}`);
       // console.log(res.data);
       // setBook(res.data);
       setTitle(res.data.bookTitle)
@@ -50,7 +50,7 @@ const EditBooks = () => {
 
     // updating data to the database
     const sending=async()=>{
-      const response=await axios.patch(`${import.meta.env.VITE_BASE_URL}/books/update/${id}`,updateObj,
+      const response=await axios.patch(`${import.meta.env.VITE_BASE_URL}/update/${id}`,updateObj,
       {headers:{"Content-Type":"application/json"},}
       )
       .then(response=>{alert('Data updated');
