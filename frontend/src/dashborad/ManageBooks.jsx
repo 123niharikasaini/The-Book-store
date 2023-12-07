@@ -9,7 +9,7 @@ const ManageBooks = () => {
 
   useEffect(()=>{
     const fetching=async()=>{
-        const response=await axios.get(`${import.meta.env.VITE_BASE_URL}/books/all-books`);
+        const response=await axios.get(`${import.meta.env.VITE_BASE_URL}/all-books`);
         setBooks(response.data);
         // console.log(books);
         // console.log(response.data);

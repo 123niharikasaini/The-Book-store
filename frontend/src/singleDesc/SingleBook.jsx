@@ -11,7 +11,7 @@ const SingleBook = () => {
   useEffect(()=>{
     const fetching=async()=>{
         console.log("started")
-      const respond=await axios.get(`${import.meta.env.VITE_BASE_URL}/books/name?name=${name}`)
+      const respond=await axios.get(`${import.meta.env.VITE_BASE_URL}/name?name=${name}`)
       // console.log("Fetching data ....")
       setData(respond.data);
       // console.log("Fetched")
