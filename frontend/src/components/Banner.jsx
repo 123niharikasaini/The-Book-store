@@ -1,7 +1,7 @@
 import React,{useContext} from 'react'
 import RightBanner from '../Home/RightBanner'
 import LeftBanner from '../Home/LeftBanner'
-import { AuthContext } from '../contacts/authProvider'
+import { AuthContext } from '../contacts/AuthProvider'
 
 const Banner = () => {
   // getting the user from AuthProvider context
